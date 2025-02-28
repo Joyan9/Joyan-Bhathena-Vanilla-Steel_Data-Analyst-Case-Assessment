@@ -2,6 +2,8 @@
 
 Task 2 of the assessment focused on data analysis and visualisation. I had to work with `deal.csv` dataset which had multiple columns and required cleaning and prep before it could be used for visualisation. Therefore I chose to first create the datasets in BigQuery using SQL and then connect the output to Looker Studio.
 
+Link to report: https://lookerstudio.google.com/reporting/85c4a40b-ee8c-4c25-8d51-6d5fdb3eef31/page/Rhp0E
+
 ## **Account Manager Performance Report**
 The final dataset aggregated Account Manager (AM) performance metrics at a monthly and yearly level. 
 It included the following components:
@@ -29,7 +31,6 @@ It included the following components:
 - *Market Coverage* - AM_A serves the most regions (35), indicating widest market presence
 - *Profit Improvement* - Despite revenue decline, attributed profit up 8.1% and profit margin improved 65.4%
 
-Link to report: https://lookerstudio.google.com/reporting/85c4a40b-ee8c-4c25-8d51-6d5fdb3eef31/page/Rhp0E
 
 ## **Buyer Companies Report Report**
 The dataset aggregated key performance metrics for buyer companies based on their deals in order to provide insights on the volume, financial performance, and purchase behavior of buyers over time. 
