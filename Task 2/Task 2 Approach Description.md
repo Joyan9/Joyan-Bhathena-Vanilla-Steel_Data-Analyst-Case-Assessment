@@ -8,6 +8,8 @@ Link to report: https://lookerstudio.google.com/reporting/85c4a40b-ee8c-4c25-8d5
 
 ![am_ss_1](am_ss1.PNG)
 
+![am_ss_1](am_ss2.PNG)
+
 The final dataset aggregated Account Manager (AM) performance metrics at a monthly and yearly level. 
 It included the following components:
 - AM ID & Account Manager Identifiers
@@ -36,6 +38,12 @@ It included the following components:
 
 
 ## **Buyer Companies Report Report**
+
+![bc_ss_1](bc_ss1.PNG)
+
+![bc_ss_1](bc_ss2.PNG)
+
+
 The dataset aggregated key performance metrics for buyer companies based on their deals in order to provide insights on the volume, financial performance, and purchase behavior of buyers over time. 
 It included the following components:
 - *Buyer ID & Buyer Company*- Identifiers for the buyer company and its name.
