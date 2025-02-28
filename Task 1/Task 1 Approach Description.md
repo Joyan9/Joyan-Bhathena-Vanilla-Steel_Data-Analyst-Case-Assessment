@@ -24,9 +24,9 @@ And since both datasets were quite varied, I had to work on them independently (
 
 ### **Data Cleaning and Transformation**
 
-- *Handling Missing Values*- Missing values were handled based on the column. Some columns had missing values imputed with the mean/median/mode. Other columns, where imputation was not suitable, were filled with a placeholder value (e.g., "UNKNOWN") or left as `NaN` for further analysis.
-- *Standardizing Column Names*- Column names were standardized to ensure consistency between the two datasets. This involved renaming columns to a common format (e.g., using lowercase with underscores) and resolving naming discrepancies.
-- *Data Type Conversion*- Data types were converted where necessary to ensure consistency and facilitate analysis. For example, numeric columns were converted to appropriate numeric types (`int` or `float`), and date columns were converted to datetime objects.
-- *Handling inconsistencies*- Removed duplicates and corrected any inconsistencies identified.
-- *Supplier Column*- Add a column named `supplier` to identify each company.
+- *Handling Missing Values* - Missing values were handled based on the column. Some columns had missing values imputed with the mean/median/mode. Other columns, where imputation was not suitable, were filled with a placeholder value (e.g., "UNKNOWN") or left as `NaN` for further analysis.
+- *Standardizing Column Names* - Column names were standardized to ensure consistency between the two datasets. This involved renaming columns to a common format (e.g., using lowercase with underscores) and resolving naming discrepancies.
+- *Data Type Conversion* - Data types were converted where necessary to ensure consistency and facilitate analysis. For example, numeric columns were converted to appropriate numeric types (`int` or `float`), and date columns were converted to datetime objects.
+- *Handling inconsistencies* - Removed duplicates and corrected any inconsistencies identified.
+- *Supplier Column* - Add a column named `supplier` to identify each company.
 - After cleaning and standardizing the data, the two datasets were merged into a single `inventory_dataset` using the `pd.concat()` function. This combined the rows from both datasets into a unified table.
