@@ -1,3 +1,7 @@
+/*
+This SQL model generates ranked buyer recommendations for materials by matching buyer preferences with supplier data based on grade, finish, dimensions, and availability.
+*/
+
 CREATE OR REPLACE TABLE `upheld-setting-420306.deals_vanilla_steel.buyer_recommendations` AS
 
 WITH 
