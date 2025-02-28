@@ -5,6 +5,9 @@ Task 2 of the assessment focused on data analysis and visualisation. I had to wo
 Link to report: https://lookerstudio.google.com/reporting/85c4a40b-ee8c-4c25-8d51-6d5fdb3eef31/page/Rhp0E
 
 ## **Account Manager Performance Report**
+
+![am_ss_1](am_ss1.PNG)
+
 The final dataset aggregated Account Manager (AM) performance metrics at a monthly and yearly level. 
 It included the following components:
 - AM ID & Account Manager Identifiers
