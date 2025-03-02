@@ -1,50 +1,35 @@
 # Task 3 Approach Description - Buyer Preference Matching
 
-The task was aimed at matching supplier materials to buyer preferences and creating a recommendation table.
+The objective of this task was to match supplier materials to buyer preferences and generate a ranked recommendation table.  
 
-## **Approach**
+### **Approach**  
+I selected **DuckDB** as the database solution due to its lightweight nature and ease of local execution.  
 
-I chose BigQuery as my database solution for this task because of its simplicity and its seamless integration with other Google services. 
+The process consisted of:  
+1. **Data Extraction & Preparation**  
+   - Downloading supplier and buyer preference data from Google Drive (Excel files) using `gdown`.  
+   - Converting the files to CSV format for efficient processing.  
+   - Loading the cleaned CSV data into a DuckDB database.  
 
-1. I first converted the Excel files to Google Sheets for easier ingestion into BigQuery
-2. Then created external tables in BigQuery pointing to these Google Sheets
-3. Unified the supplier data and then applied the buyer preference matching logic
+2. **Data Unification**  
+   - Standardizing supplier datasets (e.g., harmonizing column names, handling missing values).  
+   - Extracting relevant information such as **finish types** from descriptions.  
+   - Filtering out unavailable materials based on supplier-specific conditions.  
 
-### Data Preparation
+3. **Buyer Preference Processing**  
+   - Standardizing buyer preferences for easier matching.  
+   - Translating German finish descriptions into English.  
+   - Casting numerical fields (thickness, width, weight) to appropriate data types.  
 
-After examining the data, I noticed some challenges like
-- Different schemas between supplier datasets
-- Different formats for similar data (like finish types)
-- Missing data in supplier_data2 (no thickness or width information)
-- German descriptions for finishes needed translation
+4. **Recommendation Matching & Ranking**  
+   - Using a **CROSS JOIN** to evaluate all possible buyer-supplier matches.  
+   - Implementing a **scoring system** based on:  
+     - Exact & partial matches (grade, finish, thickness, width).  
+     - Numeric tolerances for dimensions (e.g., width within ±10mm, thickness within ±0.5mm).  
+   - Prioritizing **exact matches** over partial matches.  
+   - Providing **match explanations** for transparency.  
+   - Selecting **top 5 matches per buyer** based on rank.  
 
-### Implementation Steps
-
-**Step 1 - Unified Supplier Data**
-I created a unified view of supplier data by:
-- Standardized field names across both supplier datasets
-- Handled NULL values
-- Extracted finish information from descriptions in supplier_data2
-- Added a unique material_id to each item for tracking (absent from supplier_1)
-- Filtered out reserved items and those with zero quantity (Supplier_2 if reserved column contained `VANILLA` then assumed that the material was not available, reserved for another buyer)
-
-**Step 2 - Buyer Preference Processing**
-Buyer preferences did not have a lot of columns, therefore the processing steps were simpler:
-- Created a standardized format for matching
-- Added English translations for German finish descriptions
-- Casted numeric values to appropriate types for comparison
-
-**Step 3 - Recommendation Matching Logic**
-I implemented the following matching logic between suppliers and buyer preferences:
-- Used a CROSS JOIN to evaluate every possible buyer-supplier match
-- Created a scoring system based on grade, finish, thickness, and width
-- Implemented flexible matching for partial matches (using REGEXP_CONTAINS)
-- Prioritized exact matches over partial matches
-- Created detailed match explanations for transparency
-
-**Step 4 - Output Optimization**
-For the final output, I:
-- Limited recommendations to the top 5 matches per buyer
-- Included explanations for why each item was recommended
-- Created a structured view for easier consumption by downstream applications
-
+5. **Final Output Optimization**  
+   - Creating a **view** in DuckDB to store and display top recommendations.  
+   - Excluding redundant fields while ensuring structured output for easy integration with downstream applications.  
