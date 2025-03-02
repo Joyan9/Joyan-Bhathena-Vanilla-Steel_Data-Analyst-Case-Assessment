@@ -12,11 +12,14 @@ This guide will help you set up and run the buyer recommendations pipeline for t
 1. **Clone the GitHub repository & Set Working Directory**
 
    ```bash
-   git clone https://github.com/Joyan-Bhathena-Vanilla-Steel_Data-Analyst-Case-Assessment.git
-   cd Joyan-Bhathena-Vanilla-Steel_Data-Analyst-Case-Assessment/Task\ 3
+   gh repo clone Joyan9/Joyan-Bhathena-Vanilla-Steel_Data-Analyst-Case-Assessment
    ```
 
-2. **Set up a Python virtual environment (recommended)**
+   ```bash
+   cd "Joyan-Bhathena-Vanilla-Steel_Data-Analyst-Case-Assessment/Task 3"
+   ```
+
+1. **Set up a Python virtual environment (recommended)**
 
    ```bash
    # Create a virtual environment
@@ -29,7 +32,7 @@ This guide will help you set up and run the buyer recommendations pipeline for t
    source venv/bin/activate
    ```
 
-3. **Install required dependencies**
+2. **Install required dependencies**
 
    ```bash
    pip install -r requirements.txt
